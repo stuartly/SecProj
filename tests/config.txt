@@ -5,25 +5,7 @@ CheckerEnable
 	PointToAnalysisChecker = false
 	SplitBasicBlockwithFunCall = false
 
-	MemoryLeakChecker = false
-	DoubleFreeChecker = false
-	UninitializedStructureMemberChecker = false
-	MemoryRewriteChecker = true
-	RedundantNullChecker = false
-	FunctionCallChecker = false
 	RedundantFunctionCallInLoopChecker = true
-	ExpensiveFunctionCallChecker = false
-	ReduceLockChecker = false
-	ProcessSwitchingFrequentlyChecker = false
-	InstructionLayoutChecker = false
-	DataLayoutChecker = true
-	FakeCachelineShareChecker = false
-	AlignCachelineChecker = false
-	AddLikelyOrUnlikelyToBranchChecker = false
-	ExpensiveOperationChecker = false
-	CPUOutOfOrderExecutionChecker = false
-	SlowMemoryOperationChecker = false
-	HugeMemoryChecker = false
 }
 
 PrintLog
