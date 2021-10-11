@@ -1,0 +1,6 @@
+add_subdirectory(checkers)
+add_subdirectory(framework)
+add_subdirectory(VFG)
+add_subdirectory(CFG)
+add_subdirectory(P2A)
+add_subdirectory(DetectMe)

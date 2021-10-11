@@ -1,0 +1,191 @@
+CheckerEnable
+{
+	TemplateChecker = false
+	CallGraphChecker = false
+	SplitBasicBlockwithFunCall = false
+
+	MemoryLeakChecker = false
+	MbufMemoryLeakChecker = false
+	DoubleFreeChecker = false
+	MbufDoubleFreeChecker = false
+	UninitializedStructureMemberChecker = false
+	MemoryRewriteChecker = true
+	RedundantNullChecker = false
+	FunctionCallChecker = false
+	RedundantNullChecker = false
+	RedundantFunctionCallInLoopChecker = false
+	ExpensiveFunctionCallChecker = false
+	ReduceLockChecker = false
+	ProcessSwitchingFrequentlyChecker = false
+	InstructionLayoutChecker = false
+	DataLayoutChecker = false
+	FakeCachelineShareChecker = false
+	AlignCachelineChecker = false
+	AddLikelyOrUnlikelyToBranchChecker = false
+	ExpensiveOperationChecker = false
+	CPUOutOfOrderExecutionChecker = false
+	SlowMemoryOperationChecker = false
+	HugeMemoryChecker = false
+}
+
+PrintLog
+{
+	level = 0
+	CallGraphChecker = true
+	taintChecker = false
+	TemplateChecker = false
+	arrayBound = false
+	recursiveCall = false
+	divideChecker = false
+	memoryOPChecker = false
+}
+
+P2A
+{
+	analysisSystemHeader = true
+
+	Point_to_test1 = false
+	Point_to_test2 = false
+	Alias_test1 = false
+	Alias_test2 = false
+	Alias_test3 = false
+}
+
+CallGraph
+{
+	showDestructor = true
+	showFunctionPtr = true
+	showLambda = true
+	inlineAndTemplate = true
+	showLibFunc = true
+	ignoreNoCalledSystemHeader = false
+	printToConsole = false
+}
+
+Framework
+{
+	queue_size = 500
+}
+
+FrequentAccess
+{
+    threshold = 2
+}
+
+TemplateChecker
+{
+	request_fun = 2
+}
+
+MemoryLeakChecker
+{
+
+}
+
+MbufMemoryLeakChecker
+{
+
+}
+
+DoubleFreeChecker
+{
+
+}
+
+MbufDoubleFreeChecker
+{
+
+}
+
+UninitializedStructureMemberChecker
+{
+
+}
+
+MemoryRewriteChecker
+{
+	DisableSimpleVariable=false
+}
+
+RedundantNullChecker
+{
+	pointer_analysis = true
+}
+
+RedundantFunctionCallInLoopChecker
+{
+ ignore_c_standard_library=false;
+
+}
+
+FunctionCallChecker
+{
+    param_size = 6
+    array_size = 2048
+}
+
+ReduceLockChecker
+{
+
+}
+
+ProcessSwitchingFrequentlyChecker
+{
+
+}
+
+InstructionLayoutChecker
+{
+    code_count_threshold = 2
+}
+
+DataLayoutChecker
+{
+	threshold=1
+}
+
+FakeCachelineShareChecker
+{
+    min_gap = 0.5
+    min_access = 5
+}
+
+AlignCachelineChecker
+{
+	cacheline_size = 64
+}
+
+AddLikelyOrUnlikelyToBranchChecker
+{
+    likely_threshold = 0.85
+    unlikely_threshold = 0.15
+}
+
+ExpensiveOperationChecker
+{
+
+}
+
+CPUOutOfOrderExecutionChecker
+{
+
+}
+
+SlowMemoryOperationChecker
+{
+		min_bytes_operated_onetime = 8
+}
+
+HugeMemoryChecker
+{
+	localVarThreshold = 512
+	globalVarThreshold = 1024
+	dataSectionThreshold = 256
+	ignoreLibPaths = /usr/include:/usr/local/include
+	considerCStyleCast = false
+}
+
+CriticalPaths
+{
+    path1 = main,func1,func2
+}

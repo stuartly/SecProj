@@ -1,0 +1,196 @@
+CheckerEnable
+{
+	TemplateChecker = false
+	CallGraphChecker = true
+	PointToAnalysisChecker = false
+	SplitBasicBlockwithFunCall = false
+
+	MemoryLeakChecker = false
+	MbufMemoryLeakChecker = false
+	DoubleFreeChecker = false
+	MbufDoubleFreeChecker = false
+	UninitializedStructureMemberChecker = false
+	MemoryRewriteChecker = false
+	RedundantNullChecker = false
+	FunctionCallChecker = false
+	RedundantNullChecker = false
+	RedundantFunctionCallInLoopChecker = false
+	ExpensiveFunctionCallChecker = false
+	ReduceLockChecker = true
+	ProcessSwitchingFrequentlyChecker = false
+	InstructionLayoutChecker = false
+	DataLayoutChecker = false
+	FakeCachelineShareChecker = false
+	AlignCachelineChecker = false
+	AddLikelyOrUnlikelyToBranchChecker = false
+	ExpensiveOperationChecker = false
+	CPUOutOfOrderExecutionChecker = false
+	SlowMemoryOperationChecker = false
+	HugeMemoryChecker = false
+}
+
+PrintLog
+{
+	level = 0
+	CallGraphChecker = true
+	taintChecker = false
+	TemplateChecker = false
+	arrayBound = false
+	recursiveCall = false
+	divideChecker = false
+	memoryOPChecker = false
+}
+
+P2A
+{
+	analysisSystemHeader = true
+
+	Point_to_test1 = false
+	Point_to_test2 = false
+	Alias_test1 = false
+	Alias_test2 = false
+	Alias_test3 = false
+}
+
+CallGraph
+{
+	showDestructor = true
+	showFunctionPtr = true
+	showLambda = true
+	inlineAndTemplate = true
+	showLibFunc = true
+	ignoreNoCalledSystemHeader = false
+	printToConsole = false
+	printToDot = false
+}
+
+Framework
+{
+	queue_size = 200
+}
+
+FrequentAccess
+{
+    threshold = 2
+}
+
+TemplateChecker
+{
+	request_fun = 2
+}
+
+MemoryLeakChecker
+{
+
+}
+
+MbufMemoryLeakChecker
+{
+
+}
+
+DoubleFreeChecker
+{
+
+}
+
+MbufDoubleFreeChecker
+{
+
+}
+
+UninitializedStructureMemberChecker
+{
+
+}
+
+MemoryRewriteChecker
+{
+
+}
+
+RedundantNullChecker
+{
+	pointer_analysis = true
+}
+
+RedundantFunctionCallInLoopChecker
+{
+ ignore_c_standard_library=false;
+
+}
+
+FunctionCallChecker
+{
+    param_size = 6
+    array_size = 2048
+}
+
+ReduceLockChecker
+{
+	lock=lock:plock_lock:pthread_mutex_lock:rte_mcslock_lock:rte_spinlock_lock:rte_rcu_qsbr_lock:rte_rwlock_write_lock:rte_rwlock_read_lock:rte_rwlock_read_trylock:rte_rwlock_write_trylock:rte_spinlock_recursive_lock:rte_spinlock_recursive_trylock:rte_ticketlock_recursive_lock:spin_lock:rte_mcfg_mem_read_lock:iavf_acquire_spinlock:ef10_nvram_partn_lock:siena_nvram_partn_lock:bnxt_acquire_flow_lock:tfp_spinlock_lock:t4_os_lock:fs_lock:hinic_mutex_lock:i40e_acquire_spinlock:ice_acquire_lock:rte_spinlock_lock:rte_mcfg_tailq_write_lock:rte_mcfg_tailq_read_lock:__hash_rw_writer_lock:__hash_rw_reader_lock:
+	unlock=unlock:plock_unlock:pthread_mutex_unlock:rte_mcslock_unlock:rte_spinlock_unlock:rte_rcu_qsbr_unlock:rte_rwlock_write_unlock:rte_rwlock_read_unlock:rte_ticketlock_recursive_unlock:spin_unlock:rte_mcfg_mem_read_unlock:iavf_release_spinlock:ef10_nvram_partn_unlock:siena_nvram_partn_unlock:bnxt_release_flow_lock:tfp_spinlock_unlock:t4_os_unlock:fs_unlock:hinic_mutex_unlock:i40e_release_spinlock:ice_release_lock:rte_spinlock_unlock:rte_mcfg_tailq_write_unlock:rte_mcfg_tailq_read_unlock:__hash_rw_writer_unlock:__hash_rw_reader_unlock:
+}
+
+ProcessSwitchingFrequentlyChecker
+{
+	limit = 3
+    threshold = 20
+	func = test_func:
+}
+
+InstructionLayoutChecker
+{
+    code_count_threshold = 2
+}
+
+DataLayoutChecker
+{
+	threshold=1
+}
+
+FakeCachelineShareChecker
+{
+    min_gap = 0.5
+    min_access = 5
+}
+
+AlignCachelineChecker
+{
+	cacheline_size = 64
+}
+
+AddLikelyOrUnlikelyToBranchChecker
+{
+    likely_threshold = 0.85
+    unlikely_threshold = 0.15
+}
+
+ExpensiveOperationChecker
+{
+
+}
+
+CPUOutOfOrderExecutionChecker
+{
+
+}
+
+SlowMemoryOperationChecker
+{
+		min_bytes_operated_onetime = 8
+}
+
+HugeMemoryChecker
+{
+	localVarThreshold = 512
+	globalVarThreshold = 1024
+	dataSectionThreshold = 256
+	ignoreLibPaths = /usr/include:/usr/local/include
+	considerCStyleCast = false
+}
+
+CriticalPaths
+{
+    path1 = main,func1,func2
+}
